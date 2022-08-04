@@ -1,0 +1,31 @@
+{# templates/contact/index.html.twig #}
+{% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+
+
+{% block title %}New Contact{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="h1 text-center p-3">{% trans %}Contact form{% endtrans %}</h1>
+	                {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+	<div class="form-control p-3">
+		{{ form_start(form) }}
+			{{ form_errors(form) }}
+
+			{{ form_row(form.name) }}
+			{{ form_row(form.email) }}
+			{{ form_row(form.body) }}
+
+			<div class="text-center">
+				{{ form_row(form.send) }}
+			</div>
+		{{ form_end(form) }}
+	</div>
+</div>
+{% endblock %}

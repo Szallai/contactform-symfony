@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head %}
+            <title>Contact Form</title>
+			 <link rel="stylesheet" href="{{ asset('build/app.css') }}" />
+
+        {% endblock %}
+    </head>
+    <body>
+        <div class="container">{% block content %}{% endblock %}</div>
+        <div class="footer text-center container mt-3">
+            {% block footer %}
+                2022
+
+            {% endblock %}
+        </div>
+    </body>
+</html>
